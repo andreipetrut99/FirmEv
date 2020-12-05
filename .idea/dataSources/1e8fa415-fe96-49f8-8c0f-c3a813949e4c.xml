@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Microsoft SQL Server - @localhost">
+  <database-model serializer="dbm" dbms="MSSQL" family-id="MSSQL" format-version="4.19">
+    <root id="1">
+      <ServerVersion>14.0.1000</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="AzureDevOps_Configuration">
+      <ObjectId>5</ObjectId>
+      <Collation>Romanian_CI_AS</Collation>
+    </database>
+    <database id="3" parent="1" name="AzureDevOps_DefaultCollection">
+      <ObjectId>6</ObjectId>
+    </database>
+    <database id="4" parent="1" name="master">
+      <ObjectId>1</ObjectId>
+      <Current>1</Current>
+      <Collation>Romanian_CI_AS</Collation>
+      <Fingerprint>1.37717/00000000-0000-0000-0000-000000000000@DESKTOP-RNT8OQC\SQLEXPRESS</Fingerprint>
+    </database>
+    <database id="5" parent="1" name="model">
+      <ObjectId>3</ObjectId>
+      <Collation>Romanian_CI_AS</Collation>
+    </database>
+    <database id="6" parent="1" name="msdb">
+      <ObjectId>4</ObjectId>
+      <Collation>Romanian_CI_AS</Collation>
+    </database>
+    <database id="7" parent="1" name="tempdb">
+      <ObjectId>2</ObjectId>
+      <Collation>Romanian_CI_AS</Collation>
+    </database>
+    <schema id="8" parent="4" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+    </schema>
+    <schema id="9" parent="4" name="db_accessadmin">
+      <ObjectId>16385</ObjectId>
+    </schema>
+    <schema id="10" parent="4" name="db_backupoperator">
+      <ObjectId>16389</ObjectId>
+    </schema>
+    <schema id="11" parent="4" name="db_datareader">
+      <ObjectId>16390</ObjectId>
+    </schema>
+    <schema id="12" parent="4" name="db_datawriter">
+      <ObjectId>16391</ObjectId>
+    </schema>
+    <schema id="13" parent="4" name="db_ddladmin">
+      <ObjectId>16387</ObjectId>
+    </schema>
+    <schema id="14" parent="4" name="db_denydatareader">
+      <ObjectId>16392</ObjectId>
+    </schema>
+    <schema id="15" parent="4" name="db_denydatawriter">
+      <ObjectId>16393</ObjectId>
+    </schema>
+    <schema id="16" parent="4" name="db_owner">
+      <ObjectId>16384</ObjectId>
+    </schema>
+    <schema id="17" parent="4" name="db_securityadmin">
+      <ObjectId>16386</ObjectId>
+    </schema>
+    <schema id="18" parent="4" name="dbo">
+      <ObjectId>1</ObjectId>
+      <IntrospectionTimestamp>2020-11-26.22:00:48.927</IntrospectionTimestamp>
+      <Current>1</Current>
+    </schema>
+    <schema id="19" parent="4" name="guest">
+      <ObjectId>2</ObjectId>
+    </schema>
+    <schema id="20" parent="4" name="sys">
+      <ObjectId>4</ObjectId>
+    </schema>
+    <table id="21" parent="18" name="Angajati">
+      <ObjectId>679673469</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.620</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:43:34.660</ModifiedTimestamp>
+    </table>
+    <table id="22" parent="18" name="Clienti">
+      <ObjectId>743673697</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.623</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.670</ModifiedTimestamp>
+    </table>
+    <table id="23" parent="18" name="Departamente">
+      <ObjectId>599673184</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.617</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:43:34.660</ModifiedTimestamp>
+    </table>
+    <table id="24" parent="18" name="Programari">
+      <ObjectId>775673811</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.627</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.673</ModifiedTimestamp>
+    </table>
+    <table id="25" parent="18" name="Sarcina_Angajat">
+      <ObjectId>839674039</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.630</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.683</ModifiedTimestamp>
+    </table>
+    <table id="26" parent="18" name="Sarcini">
+      <ObjectId>807673925</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.627</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.680</ModifiedTimestamp>
+    </table>
+    <table id="27" parent="18" name="Sucursale">
+      <ObjectId>711673583</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.623</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.660</ModifiedTimestamp>
+    </table>
+    <table id="28" parent="18" name="test">
+      <ObjectId>1239675464</ObjectId>
+      <CreatedTimestamp>2020-11-26.22:00:48.717</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.22:00:48.717</ModifiedTimestamp>
+    </table>
+    <view id="29" parent="18" name="spt_values">
+      <ObjectId>1787153412</ObjectId>
+      <SourceTextLength>161</SourceTextLength>
+      <CreatedTimestamp>2017-08-22.22:39:22.050</CreatedTimestamp>
+      <ModifiedTimestamp>2017-08-22.22:39:22.077</ModifiedTimestamp>
+    </view>
+    <routine id="30" parent="18" name="sp_MScleanupmergepublisher">
+      <ObjectId>2139154666</ObjectId>
+      <SourceTextLength>100</SourceTextLength>
+      <CreatedTimestamp>2017-08-22.22:40:17.880</CreatedTimestamp>
+      <ModifiedTimestamp>2017-08-22.22:40:40.797</ModifiedTimestamp>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="31" parent="18" name="sp_MSrepl_startup">
+      <ObjectId>2123154609</ObjectId>
+      <SourceTextLength>83</SourceTextLength>
+      <CreatedTimestamp>2017-08-22.22:40:17.870</CreatedTimestamp>
+      <ModifiedTimestamp>2017-08-22.22:40:40.793</ModifiedTimestamp>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <column id="32" parent="21" name="Id_angajat">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="21" name="CNP">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="21" name="Data_nasterii">
+      <Position>3</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="21" name="ID_departament">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="21" name="Data_angajare">
+      <Position>5</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="21" name="Telefon">
+      <Position>6</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="21" name="IBAN_cont">
+      <Position>7</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="21" name="ID_sucursala">
+      <Position>8</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="40" parent="21" name="PK_ANGAJATI">
+      <Position>1</Position>
+      <ColNames>Id_angajat</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="41" parent="21" name="PK_ANGAJATI">
+      <ObjectId>695673526</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.623</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.623</ModifiedTimestamp>
+      <ColNames>Id_angajat</ColNames>
+      <UnderlyingIndexName>PK_ANGAJATI</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="42" parent="21" name="Angajati_fk0">
+      <ObjectId>1143675122</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:43:34.660</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:43:34.660</ModifiedTimestamp>
+      <ColNames>ID_departament</ColNames>
+      <RefTableId>599673184</RefTableId>
+      <RefTableName>Departamente</RefTableName>
+      <RefKeyName>PK_DEPARTAMENTE</RefKeyName>
+      <RefColNames>ID_departament</RefColNames>
+    </foreign-key>
+    <foreign-key id="43" parent="21" name="Angajati_fk1">
+      <ObjectId>903674267</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.660</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.660</ModifiedTimestamp>
+      <ColNames>ID_sucursala</ColNames>
+      <RefTableId>711673583</RefTableId>
+      <RefTableName>Sucursale</RefTableName>
+      <RefKeyName>PK_SUCURSALE</RefKeyName>
+      <RefColNames>Id_sucursala</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="44" parent="22" name="ID_client">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="22" name="Nume_client">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="22" name="Telefon">
+      <Position>3</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="22" name="Adresa">
+      <Position>4</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="22" name="Data_inregistrare">
+      <Position>5</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="22" name="Data_nasterii">
+      <Position>6</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="50" parent="22" name="PK_CLIENTI">
+      <Position>1</Position>
+      <ColNames>ID_client</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="51" parent="22" name="PK_CLIENTI">
+      <ObjectId>759673754</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.627</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.627</ModifiedTimestamp>
+      <ColNames>ID_client</ColNames>
+      <UnderlyingIndexName>PK_CLIENTI</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="52" parent="23" name="ID_departament">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="23" name="Nume_departament">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="23" name="ID_manager">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="23" name="Numar_angajati">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="56" parent="23" name="PK_DEPARTAMENTE">
+      <Position>1</Position>
+      <ColNames>ID_departament</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <index id="57" parent="23" name="UQ__Departam__CE1F9D4AC08D9713">
+      <Position>2</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Numar_angajati</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="58" parent="23" name="UQ__Departam__19BC3764C6A6A321">
+      <Position>3</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID_manager</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="59" parent="23" name="UQ__Departam__F7D41AD5E5E4EA51">
+      <Position>4</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Nume_departament</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="60" parent="23" name="PK_DEPARTAMENTE">
+      <ObjectId>615673241</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.620</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.620</ModifiedTimestamp>
+      <ColNames>ID_departament</ColNames>
+      <UnderlyingIndexName>PK_DEPARTAMENTE</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="61" parent="23" name="UQ__Departam__F7D41AD5E5E4EA51">
+      <ObjectId>663673412</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2020-11-26.20:42:56.620</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.620</ModifiedTimestamp>
+      <ColNames>Nume_departament</ColNames>
+      <UnderlyingIndexName>UQ__Departam__F7D41AD5E5E4EA51</UnderlyingIndexName>
+    </key>
+    <key id="62" parent="23" name="UQ__Departam__19BC3764C6A6A321">
+      <ObjectId>647673355</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2020-11-26.20:42:56.620</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.620</ModifiedTimestamp>
+      <ColNames>ID_manager</ColNames>
+      <UnderlyingIndexName>UQ__Departam__19BC3764C6A6A321</UnderlyingIndexName>
+    </key>
+    <key id="63" parent="23" name="UQ__Departam__CE1F9D4AC08D9713">
+      <ObjectId>631673298</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2020-11-26.20:42:56.620</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.620</ModifiedTimestamp>
+      <ColNames>Numar_angajati</ColNames>
+      <UnderlyingIndexName>UQ__Departam__CE1F9D4AC08D9713</UnderlyingIndexName>
+    </key>
+    <foreign-key id="64" parent="23" name="Departamente_fk0">
+      <ObjectId>871674153</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.630</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.630</ModifiedTimestamp>
+      <ColNames>ID_manager</ColNames>
+      <RefTableId>679673469</RefTableId>
+      <RefTableName>Angajati</RefTableName>
+      <RefKeyName>PK_ANGAJATI</RefKeyName>
+      <RefColNames>Id_angajat</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="65" parent="24" name="ID_programare">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="24" name="ID_departament">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="24" name="ID_client">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="24" name="Adresa">
+      <Position>4</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="24" name="Data">
+      <Position>5</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="24" name="Ora">
+      <Position>6</Position>
+      <DataType>time|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="71" parent="24" name="ID_angajat">
+      <Position>7</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="72" parent="24" name="PK_PROGRAMARI">
+      <Position>1</Position>
+      <ColNames>ID_programare</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="73" parent="24" name="PK_PROGRAMARI">
+      <ObjectId>791673868</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.627</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.627</ModifiedTimestamp>
+      <ColNames>ID_programare</ColNames>
+      <UnderlyingIndexName>PK_PROGRAMARI</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="74" parent="24" name="Programari_fk0">
+      <ObjectId>935674381</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.670</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.670</ModifiedTimestamp>
+      <ColNames>ID_departament</ColNames>
+      <RefTableId>599673184</RefTableId>
+      <RefTableName>Departamente</RefTableName>
+      <RefKeyName>PK_DEPARTAMENTE</RefKeyName>
+      <RefColNames>ID_departament</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="75" parent="24" name="Programari_fk1">
+      <ObjectId>951674438</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.670</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.670</ModifiedTimestamp>
+      <ColNames>ID_client</ColNames>
+      <RefTableId>743673697</RefTableId>
+      <RefTableName>Clienti</RefTableName>
+      <RefKeyName>PK_CLIENTI</RefKeyName>
+      <RefColNames>ID_client</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="76" parent="25" name="ID_sarcina">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="25" name="ID_Angajat">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="78" parent="25" name="PK_SARCINA_ANGAJAT">
+      <Position>1</Position>
+      <ColNames>ID_sarcina</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="79" parent="25" name="PK_SARCINA_ANGAJAT">
+      <ObjectId>855674096</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.630</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.630</ModifiedTimestamp>
+      <ColNames>ID_sarcina</ColNames>
+      <UnderlyingIndexName>PK_SARCINA_ANGAJAT</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="80" parent="25" name="Sarcina_Angajat_fk0">
+      <ObjectId>999674609</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.680</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.680</ModifiedTimestamp>
+      <ColNames>ID_sarcina</ColNames>
+      <RefTableId>807673925</RefTableId>
+      <RefTableName>Sarcini</RefTableName>
+      <RefKeyName>PK_SARCINI</RefKeyName>
+      <RefColNames>ID_sarcina</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="81" parent="25" name="Sarcina_Angajat_fk1">
+      <ObjectId>1015674666</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.683</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.683</ModifiedTimestamp>
+      <ColNames>ID_Angajat</ColNames>
+      <RefTableId>679673469</RefTableId>
+      <RefTableName>Angajati</RefTableName>
+      <RefKeyName>PK_ANGAJATI</RefKeyName>
+      <RefColNames>Id_angajat</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="82" parent="26" name="ID_sarcina">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="83" parent="26" name="Nume_sarcina">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="84" parent="26" name="Durata">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="85" parent="26" name="ID_departament">
+      <Position>4</Position>
+      <DataType>binary(1)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="86" parent="26" name="Pret_ora">
+      <Position>5</Position>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="87" parent="26" name="PK_SARCINI">
+      <Position>1</Position>
+      <ColNames>ID_sarcina</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="88" parent="26" name="PK_SARCINI">
+      <ObjectId>823673982</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.627</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.627</ModifiedTimestamp>
+      <ColNames>ID_sarcina</ColNames>
+      <UnderlyingIndexName>PK_SARCINI</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="89" parent="27" name="Id_sucursala">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="90" parent="27" name="Nume_sucursala">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="91" parent="27" name="ID_manager_sucursala">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="92" parent="27" name="Numar_angajati">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="93" parent="27" name="Adresa">
+      <Position>5</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="94" parent="27" name="Contact">
+      <Position>6</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="95" parent="27" name="PK_SUCURSALE">
+      <Position>1</Position>
+      <ColNames>Id_sucursala</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="96" parent="27" name="PK_SUCURSALE">
+      <ObjectId>727673640</ObjectId>
+      <CreatedTimestamp>2020-11-26.20:42:56.623</CreatedTimestamp>
+      <ModifiedTimestamp>2020-11-26.20:42:56.623</ModifiedTimestamp>
+      <ColNames>Id_sucursala</ColNames>
+      <UnderlyingIndexName>PK_SUCURSALE</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="97" parent="28" name="sef">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="98" parent="29" name="name">
+      <Position>1</Position>
+      <DataType>nvarchar(35 char)|0s</DataType>
+    </column>
+    <column id="99" parent="29" name="number">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="100" parent="29" name="type">
+      <Position>3</Position>
+      <DataType>nchar(3 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="101" parent="29" name="low">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="102" parent="29" name="high">
+      <Position>5</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="103" parent="29" name="status">
+      <Position>6</Position>
+      <DataType>int|0s</DataType>
+    </column>
+  </database-model>
+</dataSource>

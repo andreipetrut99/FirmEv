@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="x64">
+    <CLASSES />
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://C:/Program Files/Microsoft JDBC/sqljdbc_6.0/enu/auth/x64" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>
