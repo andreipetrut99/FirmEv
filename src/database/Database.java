@@ -7,28 +7,49 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Database {
-    public Connection conn = null;
-    private String dbName = null;
+    private static Database instance = null;
 
-    public Database(){
+    private Connection conn = null;
+    private String dbName = "firmev";
+
+    private String url = "jdbc:mysql://localhost:3306/firmevdb";
+    private String username = "root";
+    private String password = "admin";
+
+    private Database(){
+        connectDb();
     }
 
-    public Database(String dbName, String dbURL){
-        this.dbName = dbName;
+    public static Database getInstance() {
+        if (instance == null) {
+            instance = new Database();
+        }
+        return instance;
+    }
+
+    private void connectDb() {
         try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            this.conn = DriverManager.getConnection(dbURL);//here put the new simple url.
-        } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            conn = DriverManager.getConnection(url, username, password);
+            System.out.println("Database conected!");
+        } catch (SQLException throwables) {
+            throw new IllegalStateException("Cannot connect the database!", throwables);
         }
     }
 
-    public ResultSet runSql(String sql) throws SQLException {
+    public ResultSet runSql(String sqlQuery) throws SQLException {
         Statement sta = conn.createStatement();
-        return sta.executeQuery(sql);
+        return sta.executeQuery(sqlQuery);
+    }
+
+    public boolean canConnectUser(String username, String password) throws SQLException {
+        String checkUserQuery = "SELECT UserId FROM users WHERE UserPassword=MD5('"  + password + "')";
+        ResultSet rs = runSql(checkUserQuery);
+        if (rs.next()) {
+            rs.next();
+            String dbPass = rs.getString(1);
+            return username.equals(dbPass);
+        } else {
+            return false;
+        }
     }
 }

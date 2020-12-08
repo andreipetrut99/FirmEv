@@ -1276,20 +1276,33 @@ ID_Angajat</ColNames>
       <RefTableName>angajati</RefTableName>
       <RefColNames>Id_angajat</RefColNames>
     </foreign-key>
-    <column id="366" parent="294" name="username">
+    <column id="366" parent="294" name="U_Id">
       <Position>1</Position>
-      <DataType>varchar(50)|0s</DataType>
+      <DataType>int unsigned|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="367" parent="294" name="password">
+    <column id="367" parent="294" name="UserId">
       <Position>2</Position>
-      <DataType>varchar(50)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>varchar(255)|0s</DataType>
     </column>
-    <key id="368" parent="294" name="PRIMARY">
+    <column id="368" parent="294" name="UserPassword">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <index id="369" parent="294" name="UserId">
+      <ColNames>UserId</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="370" parent="294" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>username</ColNames>
+      <ColNames>U_Id</ColNames>
       <Primary>1</Primary>
+    </key>
+    <key id="371" parent="294" name="UserId">
+      <ColNames>UserId</ColNames>
+      <UnderlyingIndexName>UserId</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

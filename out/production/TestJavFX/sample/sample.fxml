@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="501.0" prefWidth="901.0" style="-fx-background-color: #20120F;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sample.Controller">
+<AnchorPane id="AnchorPane" prefHeight="501.0" prefWidth="901.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
         <ImageView fitHeight="389.0" fitWidth="485.0" layoutX="43.0" layoutY="69.0" opacity="0.55" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -29,7 +29,7 @@
         </ImageView>
         <AnchorPane layoutX="576.0" layoutY="85.0" prefHeight="330.0" prefWidth="266.0" style="-fx-background-color: #9c2b27;">
             <children>
-                <JFXTextField focusColor="#0480d8" labelFloat="true" layoutX="49.0" layoutY="122.0" prefHeight="26.0" prefWidth="166.0" promptText="username or email" unFocusColor="#767676">
+                <JFXTextField fx:id="usernameLabel" focusColor="#0480d8" labelFloat="true" layoutX="49.0" layoutY="122.0" prefHeight="26.0" prefWidth="166.0" promptText="username or email" unFocusColor="#767676">
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
@@ -37,18 +37,18 @@
                         <ColorAdjust brightness="0.55" />
                     </effect>
                 </JFXTextField>
-                <JFXPasswordField focusColor="#0480d8" layoutX="49.0" layoutY="176.0" prefHeight="26.0" prefWidth="166.0" promptText="password" unFocusColor="#767676">
+                <JFXPasswordField fx:id="passwordLabel" focusColor="#0480d8" layoutX="49.0" layoutY="176.0" prefHeight="26.0" prefWidth="166.0" promptText="password" unFocusColor="#767676">
                     <effect>
                         <ColorAdjust brightness="0.55" />
                     </effect>
                 </JFXPasswordField>
-                <JFXButton layoutX="51.0" layoutY="236.0" prefHeight="26.0" prefWidth="166.0" style="-fx-background-color: #e73431;" text="Log in" textFill="#dad6d6" />
+                <JFXButton fx:id="loginButton" layoutX="51.0" layoutY="236.0" onMouseClicked="#logIn" prefHeight="26.0" prefWidth="166.0" style="-fx-background-color: #e73431;" text="Log in" textFill="#dad6d6" />
                 <Label layoutX="113.0" layoutY="55.0" text="Log in" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Hyperlink layoutX="85.0" layoutY="284.0" text="Forgot Password?" textAlignment="CENTER" textFill="#e73431" underline="true">
+                <Hyperlink fx:id="forgotPassLabel" layoutX="85.0" layoutY="284.0" text="Forgot Password?" textAlignment="CENTER" textFill="#e73431" underline="true">
                     <font>
                         <Font size="11.0" />
                     </font>
@@ -62,7 +62,7 @@
         </Label>
         <Label layoutX="191.0" layoutY="378.0" text="Schedule your appoiment now." textAlignment="CENTER" textFill="#acacac" />
         <Label layoutX="137.0" layoutY="396.0" text="Something wrong? Call us at (+40) 757 882 855" textAlignment="CENTER" textFill="#c9c8c8" />
-        <JFXButton layoutX="236.0" layoutY="352.0" prefHeight="26.0" prefWidth="94.0" style="-fx-background-color: #e73431;" text="Register" textFill="#dad6d6" />
+        <JFXButton fx:id="registerButton" layoutX="236.0" layoutY="352.0" prefHeight="26.0" prefWidth="94.0" style="-fx-background-color: #e73431;" text="Register" textFill="#dad6d6" />
         <Label layoutX="883.0" layoutY="5.0" onMouseClicked="#handleExit" text="X" />
     </children>
 </AnchorPane>
