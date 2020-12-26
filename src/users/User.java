@@ -9,5 +9,9 @@ public class User {
         this.password = pWord;
     }
 
+    private void getInfo() {
+        // todo get user's info from db.
+    }
+
 }
 

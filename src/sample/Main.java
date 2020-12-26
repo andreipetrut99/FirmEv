@@ -6,21 +6,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import users.CurrentUser;
 
-public class Main extends Application {
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("FirmEv");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();
-
-        Database db = Database.getInstance();
-
-    }
-
+public class Main {
 
     public static void main(String[] args) {
-        launch(args);
+        CurrentUser currentUser = CurrentUser.getInstance();
+        ScreenController screenController = new ScreenController();
+        Application.launch(ScreenController.class, args);
+        Database db = Database.getInstance();
     }
 }

@@ -18,7 +18,7 @@
     <children>
         <ImageView fitHeight="389.0" fitWidth="485.0" layoutX="43.0" layoutY="69.0" opacity="0.55" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/_IoT---Relational-Database.png" />
+                <Image url="@../images/_IoT---Relational-Database.png" />
             </image>
             <cursor>
                 <Cursor fx:constant="SW_RESIZE" />
@@ -37,22 +37,23 @@
                         <ColorAdjust brightness="0.55" />
                     </effect>
                 </JFXTextField>
-                <JFXPasswordField fx:id="passwordLabel" focusColor="#0480d8" layoutX="49.0" layoutY="176.0" prefHeight="26.0" prefWidth="166.0" promptText="password" unFocusColor="#767676">
+                <JFXPasswordField fx:id="passwordLabel" focusColor="#0480d8" layoutX="49.0" layoutY="176.0" onKeyPressed="#onEnterLogin" prefHeight="26.0" prefWidth="166.0" promptText="password" unFocusColor="#767676">
                     <effect>
                         <ColorAdjust brightness="0.55" />
                     </effect>
                 </JFXPasswordField>
                 <JFXButton fx:id="loginButton" layoutX="51.0" layoutY="236.0" onMouseClicked="#logIn" prefHeight="26.0" prefWidth="166.0" style="-fx-background-color: #e73431;" text="Log in" textFill="#dad6d6" />
-                <Label layoutX="113.0" layoutY="55.0" text="Log in" textFill="WHITE">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </Label>
                 <Hyperlink fx:id="forgotPassLabel" layoutX="85.0" layoutY="284.0" text="Forgot Password?" textAlignment="CENTER" textFill="#e73431" underline="true">
                     <font>
                         <Font size="11.0" />
                     </font>
                 </Hyperlink>
+                <Label layoutX="113.0" layoutY="55.0" text="Log in" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            <Label fx:id="worngPassLabel" layoutX="58.0" layoutY="210.0" opacity="0.0" text="wrong credentials, try again" />
             </children>
         </AnchorPane>
         <Label layoutX="211.0" layoutY="102.0" text="Welcome to FirmEv" textFill="#d7d7d7">

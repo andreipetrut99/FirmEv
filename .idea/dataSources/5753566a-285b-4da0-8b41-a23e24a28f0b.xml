@@ -1290,19 +1290,23 @@ ID_Angajat</ColNames>
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <index id="369" parent="294" name="UserId">
-      <ColNames>UserId</ColNames>
-      <Unique>1</Unique>
+    <column id="369" parent="294" name="ClientID">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <index id="370" parent="294" name="users_clienti_ID_client_fk">
+      <ColNames>ClientID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="370" parent="294" name="PRIMARY">
+    <key id="371" parent="294" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>U_Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="371" parent="294" name="UserId">
-      <ColNames>UserId</ColNames>
-      <UnderlyingIndexName>UserId</UnderlyingIndexName>
-    </key>
+    <foreign-key id="372" parent="294" name="users_clienti_ID_client_fk">
+      <ColNames>ClientID</ColNames>
+      <RefTableName>clienti</RefTableName>
+      <RefColNames>ID_client</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

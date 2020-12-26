@@ -45,7 +45,6 @@ public class Database {
         String checkUserQuery = "SELECT UserId FROM users WHERE UserPassword=MD5('"  + password + "')";
         ResultSet rs = runSql(checkUserQuery);
         if (rs.next()) {
-            rs.next();
             String dbPass = rs.getString(1);
             return username.equals(dbPass);
         } else {
