@@ -8,8 +8,10 @@ import database.Database;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -33,6 +35,10 @@ public class RegisterController {
     JFXButton registerButton;
     @FXML
     Label registerText;
+    @FXML
+    ImageView checkRegex;
+    @FXML
+    ImageView checkMatch;
 
     @FXML
     private void registerUser() {
@@ -46,7 +52,9 @@ public class RegisterController {
                 "'" + birthDate.getValue() + "')";
 
         try {
-            Database.getInstance().runUpdateSql(query);
+            if (checkRegex.getOpacity() == 1 && checkMatch.getOpacity() == 1) {
+                Database.getInstance().runUpdateSql(query);
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -65,12 +73,35 @@ public class RegisterController {
                 "'), '" + id + "')";
 
         try {
-            Database.getInstance().runUpdateSql(query);
+            if (checkRegex.getOpacity() == 1 && checkMatch.getOpacity() == 1) {
+                Database.getInstance().runUpdateSql(query);
+                Stage stage = (Stage) registerButton.getScene().getWindow();
+                stage.close();
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
 
-        Stage stage = (Stage) registerButton.getScene().getWindow();
-        stage.close();
+
+    }
+
+    @FXML
+    public void checkPassword() {
+        if (passwordField.getText().matches("^(?=.*?[a-z])(?=.*?[0-9]).{8,}$")) {
+            checkRegex.setStyle("-fx-opacity: 1");
+        } else {
+            checkRegex.setStyle("-fx-opacity: 0");
+        }
+    }
+
+    @FXML
+    public void checkPassMatch() {
+        if (passwordField.getText().equals(
+                confirmPasswordField.getText()
+        )) {
+            checkMatch.setStyle("-fx-opacity: 1");
+        } else {
+            checkMatch.setStyle("-fx-opacity: 0");
+        }
     }
 }
