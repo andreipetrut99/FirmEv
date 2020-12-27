@@ -1004,6 +1004,7 @@ SELECT|sys.sys_config:null
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="311" parent="288" name="Nume_client">
       <Position>2</Position>
@@ -1146,15 +1147,15 @@ SELECT|sys.sys_config:null
       <ColNames>ID_programare</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="340" parent="290" name="Programari_fk0">
+    <foreign-key id="340" parent="290" name="programari_clienti_ID_client_fk">
+      <ColNames>ID_programare</ColNames>
+      <RefTableName>clienti</RefTableName>
+      <RefColNames>ID_client</RefColNames>
+    </foreign-key>
+    <foreign-key id="341" parent="290" name="Programari_fk0">
       <ColNames>ID_departament</ColNames>
       <RefTableName>departamente</RefTableName>
       <RefColNames>ID_departament</RefColNames>
-    </foreign-key>
-    <foreign-key id="341" parent="290" name="Programari_fk1">
-      <ColNames>ID_client</ColNames>
-      <RefTableName>clienti</RefTableName>
-      <RefColNames>ID_client</RefColNames>
     </foreign-key>
     <foreign-key id="342" parent="290" name="Programari_fk2">
       <ColNames>ID_angajat</ColNames>

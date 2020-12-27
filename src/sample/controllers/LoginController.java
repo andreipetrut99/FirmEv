@@ -85,6 +85,23 @@ public class LoginController implements Initializable {
         }
     }
 
+    @FXML
+    private void register(MouseEvent e) {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("../scenes/registerPage.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Register new user");
+            stage.setScene(new Scene(root));
+            stage.show();
+            // Hide this current window (if this is what you want)
+            //((Node)(e.getSource())).getScene().getWindow().hide();
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
