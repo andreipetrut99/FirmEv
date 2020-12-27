@@ -1294,16 +1294,25 @@ ID_Angajat</ColNames>
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <index id="370" parent="294" name="users_clienti_ID_client_fk">
+    <index id="370" parent="294" name="users_UserId_uindex">
+      <ColNames>UserId</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="371" parent="294" name="users_clienti_ID_client_fk">
       <ColNames>ClientID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="371" parent="294" name="PRIMARY">
+    <key id="372" parent="294" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>U_Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="372" parent="294" name="users_clienti_ID_client_fk">
+    <key id="373" parent="294" name="users_UserId_uindex">
+      <ColNames>UserId</ColNames>
+      <UnderlyingIndexName>users_UserId_uindex</UnderlyingIndexName>
+    </key>
+    <foreign-key id="374" parent="294" name="users_clienti_ID_client_fk">
       <ColNames>ClientID</ColNames>
       <RefTableName>clienti</RefTableName>
       <RefColNames>ID_client</RefColNames>

@@ -41,12 +41,17 @@ public class Database {
         return sta.executeQuery(sqlQuery);
     }
 
+    public void runUpdateSql(String sqlQuery) throws SQLException {
+        Statement sta = conn.createStatement();
+        sta.executeUpdate(sqlQuery);
+    }
+
     public boolean canConnectUser(String username, String password) throws SQLException {
         String checkUserQuery = "SELECT UserId FROM users WHERE UserPassword=MD5('"  + password + "')";
         ResultSet rs = runSql(checkUserQuery);
         if (rs.next()) {
-            String dbPass = rs.getString(1);
-            return username.equals(dbPass);
+            String dbUser = rs.getString(1);
+            return username.equals(dbUser);
         } else {
             return false;
         }

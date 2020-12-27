@@ -1,23 +1,30 @@
-package sample;
+package sample.controllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import database.Database;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import users.CurrentUser;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class LoginController implements Initializable {
     @FXML
     private Label label;
     @FXML
@@ -44,21 +51,37 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    private void logIn(MouseEvent event) throws SQLException {
+    private void logIn(ActionEvent event) throws SQLException, IOException {
         String username = usernameLabel.getText();
         String password = passwordLabel.getText();
         if (Database.getInstance().canConnectUser(username, password)) {
             CurrentUser.getInstance().logInUser(username, password);
-            worngPassLabel.setStyle("-fx-opacity: 0;");
+
+            Parent mainPage = FXMLLoader.load(getClass().getResource("../scenes/userProfilePage.fxml"));
+            Scene mainScene = new Scene(mainPage);
+
+            // get stage information
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setTitle("My data");
+
+            window.setScene(mainScene);
         } else {
-            worngPassLabel.setStyle("-fx-opacity: 1;");
+            new Thread(() -> {
+                worngPassLabel.setStyle("-fx-opacity: 1;");
+                try {
+                    Thread.sleep(1200);
+                } catch (InterruptedException interruptedException) {
+                    interruptedException.printStackTrace();
+                }
+                worngPassLabel.setStyle("-fx-opacity: 0");
+            }).start();
         }
     }
 
     @FXML
     private void onEnterLogin(KeyEvent e) throws SQLException {
         if (e.getCode() == KeyCode.ENTER) {
-            logIn(null);
+            loginButton.fire();
         }
     }
 
