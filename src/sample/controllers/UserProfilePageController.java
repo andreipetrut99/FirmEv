@@ -30,7 +30,9 @@ public class UserProfilePageController implements Initializable {
     @FXML
     JFXPasswordField passwordField;
     @FXML
-    JFXTextField nameField;
+    JFXTextField firstNameField;
+    @FXML
+    JFXTextField lastNameField;
     @FXML
     JFXTextField phoneNumberField;
     @FXML
@@ -45,24 +47,48 @@ public class UserProfilePageController implements Initializable {
     Label updateText;
     @FXML
     JFXButton logoutButton;
+    @FXML
+    JFXTextField cnpTextField;
+    @FXML
+    JFXTextField ibanTextField;
+    @FXML
+    Label employeeIdField;
+    @FXML
+    Label employmentDateField;
+    @FXML
+    Label tasksField;
+    @FXML
+    JFXButton submitButton1;
+    @FXML
+    Label updateText2;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         usernameLabel.setText(currentUser.getUsername() + "!");
         usernameTextField.setText(currentUser.getUsername());
         passwordField.setText(currentUser.getPassword());
-        nameField.setText(currentUser.getName());
+        firstNameField.setText(currentUser.getFirstName());
+        lastNameField.setText(currentUser.getLastName());
         phoneNumberField.setText(currentUser.getPhoneNumber());
         addressTextArea.setText(currentUser.getAdress());
         birthDate.setValue(currentUser.getBirthDate().toLocalDate());
         registrationDate.setText(currentUser.getRegistrationDate().toLocalDate().toString());
+
+        if (CurrentUser.getInstance().isEmployee()) {
+            ibanTextField.setText(currentUser.getIban());
+            cnpTextField.setText(currentUser.getCnp());
+            employeeIdField.setText(String.valueOf(currentUser.getEmployeeId()));
+            tasksField.setText("//TODO");
+            employmentDateField.setText(currentUser.getEmploymentDate().toString());
+        }
     }
 
     @FXML
     public void updateInfo(MouseEvent e) {
         currentUser.setUsername(usernameTextField.getText());
         currentUser.setPassword("MD5('" + passwordField.getText() + "')");
-        currentUser.setName(nameField.getText());
+        currentUser.setFirstName(firstNameField.getText());
+        currentUser.setLastName(lastNameField.getText());
         currentUser.setPhoneNumber(phoneNumberField.getText());
         currentUser.setAdress(addressTextArea.getText());
         currentUser.setBirthDate(Date.valueOf(birthDate.getValue()));
@@ -77,6 +103,29 @@ public class UserProfilePageController implements Initializable {
             }
             updateText.setStyle("-fx-opacity: 0");
         }).start();
+    }
+
+    @FXML
+    public void updateEmployeeInfo(MouseEvent e) {
+        updateInfo(e);
+        currentUser.setCnp(cnpTextField.getText());
+        currentUser.setIban(ibanTextField.getText());
+        currentUser.updateInfo();
+
+        new Thread(() -> {
+            updateText2.setStyle("-fx-opacity: 1;");
+            try {
+                Thread.sleep(1200);
+            } catch (InterruptedException interruptedException) {
+                interruptedException.printStackTrace();
+            }
+            updateText2.setStyle("-fx-opacity: 0");
+        }).start();
+    }
+
+    @FXML
+    public void updateEmployeeInfo() {
+
     }
 
     @FXML

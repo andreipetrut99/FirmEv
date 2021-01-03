@@ -56,4 +56,13 @@ public class Database {
             return false;
         }
     }
+
+    public int getUserId(String username) throws SQLException {
+        String checkUserQuery = "SELECT ClientID FROM users WHERE UserId='"  + username + "'";
+        ResultSet rs = runSql(checkUserQuery);
+        if (rs.next()) {
+            return rs.getInt(1);
+        }
+        return -1;
+    }
 }

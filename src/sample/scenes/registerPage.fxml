@@ -21,12 +21,12 @@
          </font>
       </Label>
       <JFXTextField fx:id="usernameTextField" layoutX="114.0" layoutY="89.0" onKeyTyped="#checkNick" prefHeight="26.0" prefWidth="190.0" promptText="username" />
-      <JFXTextField fx:id="nameField" layoutX="114.0" layoutY="210.0" prefHeight="26.0" prefWidth="190.0" promptText="Name" />
-      <JFXTextField fx:id="phoneNumberField" layoutX="113.0" layoutY="250.0" prefHeight="26.0" prefWidth="190.0" promptText="Phone" />
-      <JFXTextArea fx:id="addressTextArea" layoutX="114.0" layoutY="293.0" prefHeight="50.0" prefWidth="190.0" promptText="Address" />
+      <JFXTextField fx:id="firstNameField" layoutX="114.0" layoutY="206.0" prefHeight="26.0" prefWidth="190.0" promptText="First name" />
+      <JFXTextField fx:id="phoneNumberField" layoutX="113.0" layoutY="297.0" prefHeight="26.0" prefWidth="190.0" promptText="Phone" />
+      <JFXTextArea fx:id="addressTextArea" layoutX="115.0" layoutY="331.0" prefHeight="50.0" prefWidth="190.0" promptText="Address" />
       <JFXPasswordField fx:id="passwordField" layoutX="114.0" layoutY="126.0" onKeyTyped="#checkPassword" prefHeight="26.0" prefWidth="190.0" promptText="password" />
-      <DatePicker fx:id="birthDate" layoutX="113.0" layoutY="365.0" prefHeight="26.0" prefWidth="190.0" promptText="birth date" />
-      <JFXButton fx:id="registerButton" layoutX="125.0" layoutY="443.0" onMouseClicked="#registerUser" prefHeight="26.0" prefWidth="166.0" style="-fx-background-color: #e73431;" text="Register" textFill="#dad6d6" />
+      <DatePicker fx:id="birthDate" layoutX="114.0" layoutY="403.0" prefHeight="26.0" prefWidth="190.0" promptText="birth date" />
+      <JFXButton fx:id="registerButton" layoutX="126.0" layoutY="459.0" onMouseClicked="#registerUser" prefHeight="26.0" prefWidth="166.0" style="-fx-background-color: #e73431;" text="Register" textFill="#dad6d6" />
       <ImageView fx:id="checkRegex" fitHeight="20.0" fitWidth="24.0" layoutX="302.0" layoutY="129.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/checkedImg.png" />
@@ -44,8 +44,9 @@
          </image>
       </ImageView>
       <Label fx:id="takenText" layoutX="334.0" layoutY="93.0" opacity="0.0" text="Username taken/null" textFill="#dd0404" />
-      <Label fx:id="wrongUsername" layoutX="163.0" layoutY="412.0" opacity="0.0" text="Check username!" textFill="#b20101" />
-      <Label fx:id="wrongPassword" layoutX="112.0" layoutY="412.0" opacity="0.0" text="Password doesn't match flter criteria" textFill="#c50505" />
-      <Label fx:id="wrongMatch" layoutX="141.0" layoutY="412.0" opacity="0.0" text="Passwords doesn't match" textFill="#ca0303" />
+      <Label fx:id="wrongUsername" layoutX="163.0" layoutY="430.0" opacity="0.0" text="Check username!" textFill="#b20101" />
+      <Label fx:id="wrongPassword" layoutX="112.0" layoutY="430.0" opacity="0.0" text="Password doesn't match flter criteria" textFill="#c50505" />
+      <Label fx:id="wrongMatch" layoutX="142.0" layoutY="430.0" opacity="0.0" text="Passwords doesn't match" textFill="#ca0303" />
+      <JFXTextField fx:id="lastNameField" layoutX="113.0" layoutY="250.0" prefHeight="26.0" prefWidth="190.0" promptText="Last name" />
    </children>
 </AnchorPane>

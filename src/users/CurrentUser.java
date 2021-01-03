@@ -11,13 +11,23 @@ public class CurrentUser {
     private String password;
     private static CurrentUser instance = null;
     private boolean isLoggedIn;
+    private boolean isEmployee;
 
-    private int user_id;
-    private String name;
+    private int client_id;
+    private String firstName;
+    private String lastName;
     private String phoneNumber;
     private String adress;
     private Date birthDate;
     private Date registrationDate;
+
+    private int employeeId;
+    private String iban;
+    private String cnp;
+    private String tasks;
+    private Date employmentDate;
+    private int departmentId;
+    private int agencyId;
 
     private CurrentUser() { }
 
@@ -29,29 +39,71 @@ public class CurrentUser {
     }
 
     private void getInfo() {
-        // todo get user's info from db.
         String query = "SELECT C.* FROM Clienti C" +
-                " INNER JOIN users U ON U.ClientID = C.ID_client";
+                " INNER JOIN users U ON U.ClientID = C.ID_client " +
+                "WHERE U.ClientId = " + client_id;
         try {
             ResultSet rs = Database.getInstance().runSql(query);
             if (rs.next()) {
-                user_id = Integer.parseInt(rs.getString(1));
-                name = rs.getString(2);
-                phoneNumber = rs.getString(3);
-                adress = rs.getString(4);
-                registrationDate = rs.getDate(5);
-                birthDate = rs.getDate(6);
+                client_id = Integer.parseInt(rs.getString(1));
+                lastName = rs.getString(2);
+                firstName = rs.getString(3);
+                phoneNumber = rs.getString(4);
+                adress = rs.getString(5);
+                registrationDate = rs.getDate(6);
+                birthDate = rs.getDate(7);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        if (isEmployee) {
+            getEmployeeInfo();
+        }
+    }
+
+    private void getEmployeeInfo() {
+        String query = "SELECT C.* FROM Angajati C" +
+                " INNER JOIN users U ON U.AngajatID = C.Id_angajat " +
+                "WHERE U.AngajatID = " + employeeId;
+        try {
+            ResultSet rs = Database.getInstance().runSql(query);
+            if (rs.next()) {
+                cnp = rs.getString(4);
+                departmentId = rs.getInt(6);
+                employmentDate = rs.getDate(7);
+                iban = rs.getString(9);
+                agencyId = rs.getInt(10);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
 
-    public void logInUser(String username, String password) {
+    public void logInUser(String username, String password, int client_id) {
         this.username = username;
         this.password = password;
+        this.client_id  = client_id;
         isLoggedIn = true;
+        checkEmployee(username);
         getInfo();
+    }
+
+    private void checkEmployee(String username) {
+        String query = "SELECT AngajatID FROM users WHERE UserId = '" + username + "'";
+        try {
+            ResultSet rs = Database.getInstance().runSql(query);
+            if (rs.next()) {
+                if (!(rs.getString(1) == null)) {
+                    isEmployee = true;
+                    employeeId = rs.getInt(1);
+                }
+                return;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        isEmployee = false;
     }
 
     public void logOutUser() {
@@ -76,16 +128,24 @@ public class CurrentUser {
         return password;
     }
 
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String name) {
+        this.firstName = name;
     }
 
     public String getPhoneNumber() {
@@ -116,18 +176,75 @@ public class CurrentUser {
         return registrationDate;
     }
 
-    public void setRegistrationDate(Date registrationDate) {
-        this.registrationDate = registrationDate;
+    public boolean isEmployee() {
+        return isEmployee;
+    }
+
+    public String getIban() {
+        return iban;
+    }
+
+    public void setIban(String iban) {
+        this.iban = iban;
+    }
+
+    public String getCnp() {
+        return cnp;
+    }
+
+    public void setCnp(String cnp) {
+        this.cnp = cnp;
+    }
+
+    public String getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(String tasks) {
+        this.tasks = tasks;
+    }
+
+    public Date getEmploymentDate() {
+        return employmentDate;
+    }
+
+    public void setEmploymentDate(Date employmentDate) {
+        this.employmentDate = employmentDate;
+    }
+
+    public int getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
+    }
+
+    public int getAgencyId() {
+        return agencyId;
+    }
+
+    public void setAgencyId(int agencyId) {
+        this.agencyId = agencyId;
+    }
+
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
     }
 
     public void updateInfo() {
         String query;
         query = "UPDATE clienti SET "
-                + "Nume_client = '" + name + "', "
+                + "Nume_client = '" + lastName + "', "
+                + "Prenume_client = '" + firstName + "', "
                 + "Telefon = '" + phoneNumber + "', "
                 + "Adresa = '" + adress + "', "
                 + "Data_nasterii = '" + birthDate.toString() + "' " +
-                "WHERE ID_client = " + user_id;
+                "WHERE ID_client = " + client_id;
         try {
             Database.getInstance().runUpdateSql(query);
         } catch (SQLException throwables) {
@@ -138,12 +255,35 @@ public class CurrentUser {
         query = "UPDATE users SET "
                 + "UserId = '" + username + "', "
                 + "UserPassword = " + password + " " +
-                "WHERE ClientID = " + user_id;
+                "WHERE ClientID = " + client_id;
 
         try {
             Database.getInstance().runUpdateSql(query);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
+        if (isEmployee) {
+            updateEmployeeInfo();
+        }
     }
+
+    public void updateEmployeeInfo() {
+        String query;
+        query = "UPDATE angajati SET "
+                + "Nume = '" + lastName + "', "
+                + "Prenume = '" + firstName + "', "
+                + "Telefon = '" + phoneNumber + "', "
+                + "Data_nasterii = '" + birthDate.toString() + "', "
+                + "CNP = '" + cnp + "', "
+                + "IBAN_cont = '" + iban + "' " +
+                "WHERE ID_angajat = " + employeeId;
+        try {
+            Database.getInstance().runUpdateSql(query);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    //public void updateEmployee
 }

@@ -1011,309 +1011,326 @@ SELECT|sys.sys_config:null
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="312" parent="288" name="Telefon">
+    <column id="312" parent="288" name="Prenume_client">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="313" parent="288" name="Adresa">
+    <column id="313" parent="288" name="Telefon">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="314" parent="288" name="Data_inregistrare">
+    <column id="314" parent="288" name="Adresa">
       <Position>5</Position>
-      <DataType>date|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="315" parent="288" name="Data_nasterii">
+    <column id="315" parent="288" name="Data_inregistrare">
       <Position>6</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="316" parent="288" name="PRIMARY">
+    <column id="316" parent="288" name="Data_nasterii">
+      <Position>7</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="317" parent="288" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID_client</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="317" parent="289" name="ID_departament">
+    <column id="318" parent="289" name="ID_departament">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="318" parent="289" name="Nume_departament">
+    <column id="319" parent="289" name="Nume_departament">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="319" parent="289" name="ID_manager">
+    <column id="320" parent="289" name="ID_manager">
       <Position>3</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="320" parent="289" name="Numar_angajati">
+    <column id="321" parent="289" name="Numar_angajati">
       <Position>4</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="321" parent="289" name="Nume_departament">
+    <index id="322" parent="289" name="Nume_departament">
       <ColNames>Nume_departament</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="322" parent="289" name="ID_manager">
+    <index id="323" parent="289" name="ID_manager">
       <ColNames>ID_manager</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="323" parent="289" name="Numar_angajati">
+    <index id="324" parent="289" name="Numar_angajati">
       <ColNames>Numar_angajati</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="324" parent="289" name="PRIMARY">
+    <key id="325" parent="289" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID_departament</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="325" parent="289" name="Nume_departament">
+    <key id="326" parent="289" name="Nume_departament">
       <ColNames>Nume_departament</ColNames>
       <UnderlyingIndexName>Nume_departament</UnderlyingIndexName>
     </key>
-    <key id="326" parent="289" name="ID_manager">
+    <key id="327" parent="289" name="ID_manager">
       <ColNames>ID_manager</ColNames>
       <UnderlyingIndexName>ID_manager</UnderlyingIndexName>
     </key>
-    <key id="327" parent="289" name="Numar_angajati">
+    <key id="328" parent="289" name="Numar_angajati">
       <ColNames>Numar_angajati</ColNames>
       <UnderlyingIndexName>Numar_angajati</UnderlyingIndexName>
     </key>
-    <foreign-key id="328" parent="289" name="Departamente_fk0">
+    <foreign-key id="329" parent="289" name="Departamente_fk0">
       <ColNames>ID_manager</ColNames>
       <RefTableName>angajati</RefTableName>
       <RefColNames>Id_angajat</RefColNames>
     </foreign-key>
-    <column id="329" parent="290" name="ID_programare">
+    <column id="330" parent="290" name="ID_programare">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="330" parent="290" name="ID_departament">
+    <column id="331" parent="290" name="ID_departament">
       <Position>2</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="331" parent="290" name="ID_client">
+    <column id="332" parent="290" name="ID_client">
       <Position>3</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="332" parent="290" name="Adresa">
+    <column id="333" parent="290" name="Adresa">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="333" parent="290" name="Data">
+    <column id="334" parent="290" name="Data">
       <Position>5</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="334" parent="290" name="Ora">
+    <column id="335" parent="290" name="Ora">
       <Position>6</Position>
       <DataType>time|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="335" parent="290" name="ID_angajat">
+    <column id="336" parent="290" name="ID_angajat">
       <Position>7</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="336" parent="290" name="Programari_fk0">
+    <index id="337" parent="290" name="Programari_fk0">
       <ColNames>ID_departament</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="337" parent="290" name="Programari_fk1">
+    <index id="338" parent="290" name="Programari_fk1">
       <ColNames>ID_client</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="338" parent="290" name="Programari_fk2">
+    <index id="339" parent="290" name="Programari_fk2">
       <ColNames>ID_angajat</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="339" parent="290" name="PRIMARY">
+    <key id="340" parent="290" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID_programare</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="340" parent="290" name="programari_clienti_ID_client_fk">
+    <foreign-key id="341" parent="290" name="programari_clienti_ID_client_fk">
       <ColNames>ID_programare</ColNames>
       <RefTableName>clienti</RefTableName>
       <RefColNames>ID_client</RefColNames>
     </foreign-key>
-    <foreign-key id="341" parent="290" name="Programari_fk0">
+    <foreign-key id="342" parent="290" name="Programari_fk0">
       <ColNames>ID_departament</ColNames>
       <RefTableName>departamente</RefTableName>
       <RefColNames>ID_departament</RefColNames>
     </foreign-key>
-    <foreign-key id="342" parent="290" name="Programari_fk2">
+    <foreign-key id="343" parent="290" name="Programari_fk2">
       <ColNames>ID_angajat</ColNames>
       <RefTableName>angajati</RefTableName>
       <RefColNames>Id_angajat</RefColNames>
     </foreign-key>
-    <column id="343" parent="291" name="ID_sarcina">
+    <column id="344" parent="291" name="ID_sarcina">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="344" parent="291" name="ID_Angajat">
+    <column id="345" parent="291" name="ID_Angajat">
       <Position>2</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="345" parent="291" name="Sarcina_Angajat_fk1">
+    <index id="346" parent="291" name="Sarcina_Angajat_fk1">
       <ColNames>ID_Angajat</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="346" parent="291" name="PRIMARY">
+    <key id="347" parent="291" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID_sarcina
 ID_Angajat</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="347" parent="291" name="Sarcina_Angajat_fk0">
+    <foreign-key id="348" parent="291" name="Sarcina_Angajat_fk0">
       <ColNames>ID_sarcina</ColNames>
       <RefTableName>sarcini</RefTableName>
       <RefColNames>ID_sarcina</RefColNames>
     </foreign-key>
-    <foreign-key id="348" parent="291" name="Sarcina_Angajat_fk1">
+    <foreign-key id="349" parent="291" name="Sarcina_Angajat_fk1">
       <ColNames>ID_Angajat</ColNames>
       <RefTableName>angajati</RefTableName>
       <RefColNames>Id_angajat</RefColNames>
     </foreign-key>
-    <column id="349" parent="292" name="ID_sarcina">
+    <column id="350" parent="292" name="ID_sarcina">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="350" parent="292" name="Nume_sarcina">
+    <column id="351" parent="292" name="Nume_sarcina">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="351" parent="292" name="Durata">
+    <column id="352" parent="292" name="Durata">
       <Position>3</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="352" parent="292" name="ID_departament">
+    <column id="353" parent="292" name="ID_departament">
       <Position>4</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="353" parent="292" name="Pret_ora">
+    <column id="354" parent="292" name="Pret_ora">
       <Position>5</Position>
       <DataType>float|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="354" parent="292" name="Sarcini_fk0">
+    <index id="355" parent="292" name="Sarcini_fk0">
       <ColNames>ID_departament</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="355" parent="292" name="PRIMARY">
+    <key id="356" parent="292" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID_sarcina</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="356" parent="292" name="Sarcini_fk0">
+    <foreign-key id="357" parent="292" name="Sarcini_fk0">
       <ColNames>ID_departament</ColNames>
       <RefTableName>departamente</RefTableName>
       <RefColNames>ID_departament</RefColNames>
     </foreign-key>
-    <column id="357" parent="293" name="Id_sucursala">
+    <column id="358" parent="293" name="Id_sucursala">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="358" parent="293" name="Nume_sucursala">
+    <column id="359" parent="293" name="Nume_sucursala">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="359" parent="293" name="ID_manager_sucursala">
+    <column id="360" parent="293" name="ID_manager_sucursala">
       <Position>3</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="360" parent="293" name="Numar_angajati">
+    <column id="361" parent="293" name="Numar_angajati">
       <Position>4</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="361" parent="293" name="Adresa">
+    <column id="362" parent="293" name="Adresa">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="362" parent="293" name="Contact">
+    <column id="363" parent="293" name="Contact">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="363" parent="293" name="Sucursale_fk0">
+    <index id="364" parent="293" name="Sucursale_fk0">
       <ColNames>ID_manager_sucursala</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="364" parent="293" name="PRIMARY">
+    <key id="365" parent="293" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id_sucursala</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="365" parent="293" name="Sucursale_fk0">
+    <foreign-key id="366" parent="293" name="Sucursale_fk0">
       <ColNames>ID_manager_sucursala</ColNames>
       <RefTableName>angajati</RefTableName>
       <RefColNames>Id_angajat</RefColNames>
     </foreign-key>
-    <column id="366" parent="294" name="U_Id">
+    <column id="367" parent="294" name="U_Id">
       <Position>1</Position>
       <DataType>int unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="367" parent="294" name="UserId">
+    <column id="368" parent="294" name="UserId">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="368" parent="294" name="UserPassword">
+    <column id="369" parent="294" name="UserPassword">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="369" parent="294" name="ClientID">
+    <column id="370" parent="294" name="ClientID">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <index id="370" parent="294" name="users_UserId_uindex">
+    <column id="371" parent="294" name="AngajatID">
+      <Position>5</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <index id="372" parent="294" name="users_UserId_uindex">
       <ColNames>UserId</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="371" parent="294" name="users_clienti_ID_client_fk">
+    <index id="373" parent="294" name="users_AngajatID_uindex">
+      <ColNames>AngajatID</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="374" parent="294" name="users_clienti_ID_client_fk">
       <ColNames>ClientID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="372" parent="294" name="PRIMARY">
+    <key id="375" parent="294" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>U_Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="373" parent="294" name="users_UserId_uindex">
+    <key id="376" parent="294" name="users_UserId_uindex">
       <ColNames>UserId</ColNames>
       <UnderlyingIndexName>users_UserId_uindex</UnderlyingIndexName>
     </key>
-    <foreign-key id="374" parent="294" name="users_clienti_ID_client_fk">
+    <key id="377" parent="294" name="users_AngajatID_uindex">
+      <ColNames>AngajatID</ColNames>
+      <UnderlyingIndexName>users_AngajatID_uindex</UnderlyingIndexName>
+    </key>
+    <foreign-key id="378" parent="294" name="users_clienti_ID_client_fk">
       <ColNames>ClientID</ColNames>
       <RefTableName>clienti</RefTableName>
       <RefColNames>ID_client</RefColNames>

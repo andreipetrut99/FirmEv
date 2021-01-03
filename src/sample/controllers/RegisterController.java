@@ -27,7 +27,9 @@ public class RegisterController implements Initializable {
     @FXML
     JFXPasswordField confirmPasswordField;
     @FXML
-    JFXTextField nameField;
+    JFXTextField firstNameField;
+    @FXML
+    JFXTextField lastNameField;
     @FXML
     JFXTextField phoneNumberField;
     @FXML
@@ -55,10 +57,11 @@ public class RegisterController implements Initializable {
 
     @FXML
     private void registerUser() {
-        String query = "INSERT INTO Clienti (Nume_client, Telefon, " +
+        String query = "INSERT INTO Clienti (Nume_client, Prenume_client, Telefon, " +
                 "Adresa, Data_inregistrare, Data_nasterii)\n " +
                 "VALUES( " +
-                "'" + nameField.getText() + "'," +
+                "'" + lastNameField.getText() + "'," +
+                "'" + firstNameField.getText() + "'," +
                 "'" + phoneNumberField.getText() + "'," +
                 "'" + addressTextArea.getText() + "'," +
                 "'" + LocalDate.now() + "'," +
@@ -82,7 +85,7 @@ public class RegisterController implements Initializable {
         }
 
         query = "INSERT INTO users(UserId, UserPassword, ClientId)\n " +
-                "VALUES('" + usernameTextField.getText() + "', MD5('" + passwordField +
+                "VALUES('" + usernameTextField.getText() + "', MD5('" + passwordField.getText() +
                 "'), '" + id + "')";
 
         try {

@@ -26,8 +26,6 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
     @FXML
-    private Label label;
-    @FXML
     private JFXButton loginButton;
     @FXML
     private JFXTextField usernameLabel;
@@ -46,25 +44,18 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    private void pressedButton(MouseEvent event) {
-        System.out.println("ai apasat butonu");
-    }
-
-    @FXML
     private void logIn(ActionEvent event) throws SQLException, IOException {
         String username = usernameLabel.getText();
         String password = passwordLabel.getText();
         if (Database.getInstance().canConnectUser(username, password)) {
-            CurrentUser.getInstance().logInUser(username, password);
+            CurrentUser.getInstance().logInUser(username, password,
+                    Database.getInstance().getUserId(username));
 
-            Parent mainPage = FXMLLoader.load(getClass().getResource("../scenes/userProfilePage.fxml"));
-            Scene mainScene = new Scene(mainPage);
-
-            // get stage information
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window.setTitle("My data");
-
-            window.setScene(mainScene);
+            if (CurrentUser.getInstance().isEmployee()) {
+                showWindow(event, "../scenes/employeeProfilePage.fxml");
+            } else {
+                showWindow(event, "../scenes/userProfilePage.fxml");
+            }
         } else {
             new Thread(() -> {
                 worngPassLabel.setStyle("-fx-opacity: 1;");
@@ -76,6 +67,17 @@ public class LoginController implements Initializable {
                 worngPassLabel.setStyle("-fx-opacity: 0");
             }).start();
         }
+    }
+
+    private void showWindow(ActionEvent event, String name) throws IOException {
+        Parent mainPage = FXMLLoader.load(getClass().getResource(name));
+        Scene mainScene = new Scene(mainPage);
+
+        // get stage information
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setTitle("My data");
+
+        window.setScene(mainScene);
     }
 
     @FXML
