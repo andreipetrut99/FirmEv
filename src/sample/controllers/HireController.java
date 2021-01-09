@@ -62,7 +62,8 @@ public class HireController implements Initializable {
 
     private void setClientsModels() throws SQLException {
         //tbClientModel.getItems().add(new ClientModel(1, "asd", "dsa", " aaa"));
-        String query = "SELECT * FROM clienti";
+        String query = "SELECT C.*, U.UserId FROM clienti C" +
+                " INNER JOIN users U ON U.ClientID = C.ID_client";
         ResultSet rs = Database.getInstance().runSql(query);
 
         while (rs.next()) {
@@ -70,17 +71,9 @@ public class HireController implements Initializable {
             String firstN = rs.getString(2);
             String lastN = rs.getString(3);
             String phone = rs.getString(4);
+            String usrname = rs.getString(8);
 
-            query = "SELECT U.UserId FROM users U " +
-                    "INNER JOIN clienti C on U.ClientId = C.ID_client " +
-                    "WHERE C.Id_client = " + id;
-            ResultSet rs1 = Database.getInstance().runSql(query);
-            String usn = "";
-            if (rs1.next()) {
-                usn = rs1.getString(1);
-            }
-
-            tbData.getItems().add(new ClientModel(id, firstN, lastN, phone, usn));
+            tbData.getItems().add(new ClientModel(id, firstN, lastN, phone, usrname));
         }
     }
 

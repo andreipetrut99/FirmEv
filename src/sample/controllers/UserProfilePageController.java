@@ -61,6 +61,8 @@ public class UserProfilePageController implements Initializable {
     JFXButton submitButton1;
     @FXML
     Label updateText2;
+    @FXML
+    JFXButton allServicesButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -143,11 +145,20 @@ public class UserProfilePageController implements Initializable {
 
     @FXML
     public void hirePerson() {
+        showStage("../scenes/hirePage.fxml", "Hire page");
+    }
+
+    @FXML
+    public void showServices() {
+        showStage("../scenes/servicesPage.fxml", "Our servies");
+    }
+
+    private void showStage(String path, String title) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("../scenes/hirePage.fxml"));
+            root = FXMLLoader.load(getClass().getResource(path));
             Stage stage = new Stage();
-            stage.setTitle("Hire page");
+            stage.setTitle(title);
             stage.setScene(new Scene(root));
             stage.show();
             // Hide this current window (if this is what you want)

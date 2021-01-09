@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ServicesController">
+   <children>
+      <TableView fx:id="tbData" layoutX="5.0" layoutY="5.0" prefHeight="389.0" prefWidth="589.0">
+        <columns>
+          <TableColumn fx:id="serviceName" prefWidth="151.20001220703125" text="Service name" />
+          <TableColumn fx:id="time" minWidth="0.0" prefWidth="90.4000244140625" text="Time needed" />
+            <TableColumn fx:id="department" minWidth="0.0" prefWidth="90.4000244140625" text="Department" />
+            <TableColumn fx:id="price" minWidth="0.0" prefWidth="90.4000244140625" text="Price / hour" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
