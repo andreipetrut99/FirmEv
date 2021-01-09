@@ -9,10 +9,12 @@
       <TableView fx:id="tbData" layoutX="28.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
          <columns>
             <TableColumn fx:id="clientId" prefWidth="75.0" text="Client ID" />
+            <TableColumn fx:id="username" prefWidth="75.0" text="username" />
             <TableColumn fx:id="firstName" prefWidth="75.0" text="First Name" />
             <TableColumn fx:id="lastName" prefWidth="75.0" text="Last Name" />
             <TableColumn fx:id="phone" prefWidth="100.7999267578125" text="Phone Number" />
             <TableColumn fx:id="hire" prefWidth="75.0" text="Hire" />
+            <TableColumn fx:id="remove" prefWidth="75.0" text="Remove" />
          </columns>
       </TableView>
    </children>

@@ -37,8 +37,10 @@ public class HireController implements Initializable {
     @FXML
     public TableColumn<ClientModel, String> hire;
 
-    private ObservableList<ClientModel> clientsModels;
-
+    @FXML
+    public TableColumn<ClientModel, String> remove;
+    @FXML
+    public TableColumn<ClientModel, String> username;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -46,7 +48,9 @@ public class HireController implements Initializable {
         firstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         lastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
-        hire.setCellValueFactory(new PropertyValueFactory<>("button"));
+        hire.setCellValueFactory(new PropertyValueFactory<>("hireButton"));
+        remove.setCellValueFactory(new PropertyValueFactory<>("removeButton"));
+        username.setCellValueFactory(new PropertyValueFactory<>("username"));
         //add your data to the table here.
 
         try {
@@ -67,7 +71,16 @@ public class HireController implements Initializable {
             String lastN = rs.getString(3);
             String phone = rs.getString(4);
 
-            tbData.getItems().add(new ClientModel(id, firstN, lastN, phone));
+            query = "SELECT U.UserId FROM users U " +
+                    "INNER JOIN clienti C on U.ClientId = C.ID_client " +
+                    "WHERE C.Id_client = " + id;
+            ResultSet rs1 = Database.getInstance().runSql(query);
+            String usn = "";
+            if (rs1.next()) {
+                usn = rs1.getString(1);
+            }
+
+            tbData.getItems().add(new ClientModel(id, firstN, lastN, phone, usn));
         }
     }
 

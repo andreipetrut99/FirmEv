@@ -1334,6 +1334,7 @@ ID_Angajat</ColNames>
       <ColNames>ClientID</ColNames>
       <RefTableName>clienti</RefTableName>
       <RefColNames>ID_client</RefColNames>
+      <OnDelete>set-null</OnDelete>
     </foreign-key>
   </database-model>
 </dataSource>
