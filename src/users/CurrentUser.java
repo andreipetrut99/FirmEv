@@ -110,6 +110,7 @@ public class CurrentUser {
         isLoggedIn = false;
         username = null;
         password = null;
+        isEmployee = false;
     }
 
     public String getUsername() {
@@ -254,7 +255,7 @@ public class CurrentUser {
         // update username and password
         query = "UPDATE users SET "
                 + "UserId = '" + username + "', "
-                + "UserPassword = " + password + " " +
+                + "UserPassword = " + password + "   " +
                 "WHERE ClientID = " + client_id;
 
         try {

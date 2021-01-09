@@ -1222,7 +1222,7 @@ ID_Angajat</ColNames>
       <DataType>float|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="355" parent="292" name="Sarcini_fk0">
+    <index id="355" parent="292" name="sarcini_departamente_ID_departament_fk">
       <ColNames>ID_departament</ColNames>
       <Type>btree</Type>
     </index>
@@ -1231,7 +1231,7 @@ ID_Angajat</ColNames>
       <ColNames>ID_sarcina</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="357" parent="292" name="Sarcini_fk0">
+    <foreign-key id="357" parent="292" name="sarcini_departamente_ID_departament_fk">
       <ColNames>ID_departament</ColNames>
       <RefTableName>departamente</RefTableName>
       <RefColNames>ID_departament</RefColNames>

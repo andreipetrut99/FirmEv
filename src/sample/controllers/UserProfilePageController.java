@@ -124,11 +124,6 @@ public class UserProfilePageController implements Initializable {
     }
 
     @FXML
-    public void updateEmployeeInfo() {
-
-    }
-
-    @FXML
     public void logOut(MouseEvent e) {
         currentUser.logOutUser();
         Parent mainPage = null;
@@ -144,5 +139,22 @@ public class UserProfilePageController implements Initializable {
         window.setTitle("FirmEv");
 
         window.setScene(mainScene);
+    }
+
+    @FXML
+    public void hirePerson() {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("../scenes/hirePage.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Hire page");
+            stage.setScene(new Scene(root));
+            stage.show();
+            // Hide this current window (if this is what you want)
+            //((Node)(e.getSource())).getScene().getWindow().hide();
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 }
