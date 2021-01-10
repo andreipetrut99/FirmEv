@@ -46,14 +46,13 @@
       <AnchorPane layoutX="716.0" layoutY="59.0" prefHeight="426.0" prefWidth="241.0" style="-fx-background-color: #fff;">
          <children>
             <Label layoutX="85.0" layoutY="5.0" text="Control panel" />
-            <JFXButton layoutX="51.0" layoutY="86.0" style="-fx-background-color: #e73431;" text="Make a new appoiment" textFill="#dad6d6" />
             <JFXButton layoutX="67.0" layoutY="130.0" style="-fx-background-color: #e73431;" text="Your appoiments" textFill="#dad6d6" />
-            <JFXButton fx:id="allServicesButton" layoutX="84.0" layoutY="171.0" onMouseClicked="#showServices" style="-fx-background-color: #e73431;" text="All services" textFill="#dad6d6" />
-            <JFXButton fx:id="hireButton" layoutX="77.0" layoutY="213.0" onMouseClicked="#hirePerson" style="-fx-background-color: #e73431;" text="Hire a person" textFill="#dad6d6" />
+            <JFXButton fx:id="allServicesButton" layoutX="51.0" layoutY="85.0" onMouseClicked="#showServices" style="-fx-background-color: #e73431;" text="Make a new appoiment" textFill="#dad6d6" />
+            <JFXButton fx:id="hireButton" layoutX="77.0" layoutY="173.0" onMouseClicked="#hirePerson" style="-fx-background-color: #e73431;" text="Hire a person" textFill="#dad6d6" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="410.0" layoutY="44.0" prefHeight="426.0" prefWidth="242.0" style="-fx-background-color: #fff;" />
-      <AnchorPane layoutX="419.0" layoutY="54.0" onMouseClicked="#updateInfo" prefHeight="426.0" prefWidth="241.0" style="-fx-background-color: #fff;">
+      <AnchorPane layoutX="419.0" layoutY="54.0" prefHeight="426.0" prefWidth="241.0" style="-fx-background-color: #fff;">
          <children>
             <Label layoutX="85.0" layoutY="5.0" text="Employee info" />
             <Label layoutX="16.0" layoutY="86.0" text="CNP" />
@@ -63,11 +62,11 @@
             <Label layoutX="14.0" layoutY="182.0" prefHeight="18.0" prefWidth="107.0" text="Date of emplyment" />
             <Label fx:id="employmentDateField" layoutX="136.0" layoutY="182.0" prefHeight="18.0" prefWidth="78.0" text="emp date" />
             <Label layoutX="14.0" layoutY="230.0" prefHeight="18.0" prefWidth="43.0" text="Tasks" />
-            <Label fx:id="tasksField" layoutX="96.0" layoutY="230.0" prefHeight="18.0" prefWidth="78.0" text="tasks" />
             <JFXButton fx:id="submitButton1" layoutX="95.0" layoutY="364.0" onMouseClicked="#updateEmployeeInfo" style="-fx-background-color: #e73431;" text="Update" textFill="#dad6d6" />
             <Label layoutX="11.0" layoutY="50.0" prefHeight="18.0" prefWidth="74.0" text="Employee ID" />
             <Label fx:id="employeeIdField" layoutX="113.0" layoutY="50.0" prefHeight="18.0" prefWidth="74.0" text="empID" />
             <Label fx:id="updateText2" layoutX="67.0" layoutY="336.0" opacity="0.0" text="successfully updated!" />
+            <JFXTextArea fx:id="tasksField" layoutX="69.0" layoutY="228.0" prefHeight="106.0" prefWidth="150.0" />
          </children>
       </AnchorPane>
    </children>

@@ -48,9 +48,8 @@
             <AnchorPane layoutX="484.0" layoutY="54.0" prefHeight="426.0" prefWidth="372.0" style="-fx-background-color: #fff;">
                <children>
                   <Label layoutX="150.0" layoutY="5.0" text="Control panel" />
-                  <JFXButton layoutX="115.0" layoutY="98.0" onMouseClicked="#updateInfo" style="-fx-background-color: #e73431;" text="Make a new appoiment" textFill="#dad6d6" />
+                  <JFXButton layoutX="114.0" layoutY="93.0" onAction="#showServices" onMouseClicked="#updateInfo" style="-fx-background-color: #e73431;" text="Make a new appoiment" textFill="#dad6d6" />
                   <JFXButton layoutX="131.0" layoutY="187.0" onMouseClicked="#updateInfo" style="-fx-background-color: #e73431;" text="Your appoiments" textFill="#dad6d6" />
-                  <JFXButton layoutX="147.0" layoutY="280.0" onMouseClicked="#showServices" style="-fx-background-color: #e73431;" text="All services" textFill="#dad6d6" />
                </children>
             </AnchorPane>
          </children></AnchorPane>

@@ -56,7 +56,7 @@ public class UserProfilePageController implements Initializable {
     @FXML
     Label employmentDateField;
     @FXML
-    Label tasksField;
+    JFXTextArea tasksField;
     @FXML
     JFXButton submitButton1;
     @FXML
@@ -80,8 +80,11 @@ public class UserProfilePageController implements Initializable {
             ibanTextField.setText(currentUser.getIban());
             cnpTextField.setText(currentUser.getCnp());
             employeeIdField.setText(String.valueOf(currentUser.getEmployeeId()));
-            tasksField.setText("//TODO");
+            String tasks = CurrentUser.getInstance().getTasks();
+            tasksField.setText(tasks);
             employmentDateField.setText(currentUser.getEmploymentDate().toString());
+            tasksField.setDisable(true);
+            tasksField.setStyle("-fx-opacity: 1");
         }
     }
 
@@ -150,7 +153,7 @@ public class UserProfilePageController implements Initializable {
 
     @FXML
     public void showServices() {
-        showStage("../scenes/servicesPage.fxml", "Our servies");
+        showStage("../scenes/servicesPage.fxml", "Our services");
     }
 
     private void showStage(String path, String title) {

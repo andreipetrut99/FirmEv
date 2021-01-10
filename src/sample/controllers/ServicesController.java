@@ -9,7 +9,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import javax.xml.crypto.Data;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,6 +20,9 @@ public class ServicesController implements Initializable {
 
     @FXML
     public TableColumn<ServiceModel, String> serviceName;
+
+    @FXML
+    public TableColumn<ServiceModel, String> aButton;
 
     @FXML
     public TableColumn<ServiceModel, Integer> time;
@@ -43,6 +45,7 @@ public class ServicesController implements Initializable {
         time.setCellValueFactory(new PropertyValueFactory<>("time"));
         department.setCellValueFactory(new PropertyValueFactory<>("department"));
         price.setCellValueFactory(new PropertyValueFactory<>("price"));
+        aButton.setCellValueFactory(new PropertyValueFactory<>("aButton"));
         setServices("");
         addChoises();
     }

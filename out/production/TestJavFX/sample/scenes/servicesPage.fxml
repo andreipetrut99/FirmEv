@@ -12,17 +12,18 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ServicesController">
    <children>
-      <TableView fx:id="tbData" layoutX="7.0" layoutY="136.0" prefHeight="261.0" prefWidth="588.0">
+      <TableView fx:id="tbData" layoutX="7.0" layoutY="57.0" prefHeight="342.0" prefWidth="588.0">
         <columns>
           <TableColumn fx:id="serviceName" prefWidth="151.20001220703125" text="Service name" />
           <TableColumn fx:id="time" minWidth="0.0" prefWidth="90.4000244140625" text="Time needed" />
             <TableColumn fx:id="department" minWidth="0.0" prefWidth="90.4000244140625" text="Department" />
             <TableColumn fx:id="price" minWidth="0.0" prefWidth="90.4000244140625" text="Price / hour" />
+            <TableColumn fx:id="aButton" minWidth="0.0" prefWidth="129.5999755859375" text="Make an appoiment" />
         </columns>
       </TableView>
       <JFXToolbar layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="252.0">
          <right>
-            <JFXTextField fx:id="searchBar" onKeyTyped="#search" prefHeight="15.0" prefWidth="111.0" promptText="Search" BorderPane.alignment="CENTER">
+            <JFXTextField fx:id="searchBar" onKeyTyped="#search" prefHeight="15.0" prefWidth="111.0" promptText="Search for name" BorderPane.alignment="CENTER">
                <font>
                   <Font name="System Italic" size="10.0" />
                </font>

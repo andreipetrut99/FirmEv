@@ -24,7 +24,7 @@ public class CurrentUser {
     private int employeeId;
     private String iban;
     private String cnp;
-    private String tasks;
+    private String tasks = "";
     private Date employmentDate;
     private int departmentId;
     private int agencyId;
@@ -74,6 +74,20 @@ public class CurrentUser {
                 employmentDate = rs.getDate(7);
                 iban = rs.getString(9);
                 agencyId = rs.getInt(10);
+            }
+
+            query = "SELECT S.Nume_sarcina FROM sarcini S" +
+                    " INNER JOIN sarcina_angajat SA ON SA.ID_sarcina = S.ID_sarcina " +
+                    "WHERE SA.ID_Angajat = " + employeeId;
+
+            rs = Database.getInstance().runSql(query);
+
+            while (rs.next()) {
+                tasks += rs.getString(1) +  "\n";
+            }
+
+            if (tasks.equals("")) {
+                tasks = "not assigned yet";
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -235,6 +249,14 @@ public class CurrentUser {
 
     public void setEmployeeId(int employeeId) {
         this.employeeId = employeeId;
+    }
+
+    public int getClient_id() {
+        return client_id;
+    }
+
+    public void setClient_id(int client_id) {
+        this.client_id = client_id;
     }
 
     public void updateInfo() {

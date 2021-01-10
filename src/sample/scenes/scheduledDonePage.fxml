@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="147.0" prefWidth="302.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ScheduledDoneController">
+   <children>
+      <Label layoutX="121.0" layoutY="14.0" text="Thank you!" />
+      <Label layoutX="47.0" layoutY="45.0" text="We successfully saved your appoiment." />
+      <Label layoutX="10.0" layoutY="65.0" text="We will call you for confirmation in less than 4 hours." />
+      <JFXButton layoutX="128.0" layoutY="98.0" onMouseClicked="#close" style="-fx-background-color: #e73431;" text="Close" textFill="#dad6d6" />
+   </children>
+</AnchorPane>
