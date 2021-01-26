@@ -39,7 +39,7 @@ public class AppoimentController implements Initializable {
     @FXML
     Label price;
 
-    //String[] hours = new String[]{"8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm"};
+    String serviceName;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -51,6 +51,7 @@ public class AppoimentController implements Initializable {
             ServiceModel serviceModel = (ServiceModel) stage.getUserData();
 
             name.setText(serviceModel.getServiceName());
+            serviceName = serviceModel.getServiceName();
             department.setText(serviceModel.getDepartment());
 
             address.setText(CurrentUser.getInstance().getAdress());
@@ -102,13 +103,24 @@ public class AppoimentController implements Initializable {
             if (rs.next())
                 idEmp = rs.getInt(1);
 
-            query = "INSERT INTO programari(ID_departament, ID_client, Adresa, Data, Ora, ID_angajat) " +
+            query = "SELECT ID_sarcina FROM sarcini WHERE Nume_sarcina = '" + serviceName + "'";
+
+            int id_sarcina = 1;
+
+            rs = Database.getInstance().runSql(query);
+
+            if (rs.next()) {
+                id_sarcina = rs.getInt(1);
+            }
+
+            query = "INSERT INTO programari(ID_departament, ID_client, Adresa, Data, Ora, ID_angajat, ID_sarcina) " +
                     "VALUES('" + idDep + "'," +
                     "'" + idClient + "'," +
                     "'" + addr + "'," +
                     "'" + apDate.toString() + "'," +
                     "'" + time + "'," +
-                    "'" + idEmp + "')";
+                    "'" + idEmp + "'," +
+                    "'" + id_sarcina + "')";
 
             Database.getInstance().runUpdateSql(query);
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.MyAppoimentsController">
+   <children>
+      <TableView fx:id="tbData" layoutX="2.0" layoutY="7.0" prefHeight="390.0" prefWidth="594.0">
+        <columns>
+          <TableColumn fx:id="appId" prefWidth="54.39996337890625" text="App.ID" />
+          <TableColumn fx:id="name" prefWidth="133.60003662109375" text="Service Name" />
+            <TableColumn fx:id="address" prefWidth="118.39996337890625" text="Address" />
+            <TableColumn fx:id="date" prefWidth="73.60003662109375" text="Date" />
+            <TableColumn fx:id="hour" prefWidth="49.60003662109375" text="Hour" />
+            <TableColumn fx:id="employee" prefWidth="71.20001220703125" text="Employee" />
+            <TableColumn fx:id="deleteRow" prefWidth="71.20001220703125" text="Delete" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -46,7 +46,7 @@
       <AnchorPane layoutX="716.0" layoutY="59.0" prefHeight="426.0" prefWidth="241.0" style="-fx-background-color: #fff;">
          <children>
             <Label layoutX="85.0" layoutY="5.0" text="Control panel" />
-            <JFXButton layoutX="67.0" layoutY="130.0" style="-fx-background-color: #e73431;" text="Your appoiments" textFill="#dad6d6" />
+            <JFXButton layoutX="67.0" layoutY="130.0" onAction="#showMyAppoiments" style="-fx-background-color: #e73431;" text="Your appoiments" textFill="#dad6d6" />
             <JFXButton fx:id="allServicesButton" layoutX="51.0" layoutY="85.0" onMouseClicked="#showServices" style="-fx-background-color: #e73431;" text="Make a new appoiment" textFill="#dad6d6" />
             <JFXButton fx:id="hireButton" layoutX="77.0" layoutY="173.0" onMouseClicked="#hirePerson" style="-fx-background-color: #e73431;" text="Hire a person" textFill="#dad6d6" />
          </children>

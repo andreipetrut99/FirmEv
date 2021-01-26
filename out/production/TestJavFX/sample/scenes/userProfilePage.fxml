@@ -49,7 +49,7 @@
                <children>
                   <Label layoutX="150.0" layoutY="5.0" text="Control panel" />
                   <JFXButton layoutX="114.0" layoutY="93.0" onAction="#showServices" onMouseClicked="#updateInfo" style="-fx-background-color: #e73431;" text="Make a new appoiment" textFill="#dad6d6" />
-                  <JFXButton layoutX="131.0" layoutY="187.0" onMouseClicked="#updateInfo" style="-fx-background-color: #e73431;" text="Your appoiments" textFill="#dad6d6" />
+                  <JFXButton layoutX="130.0" layoutY="155.0" onAction="#showMyAppoiments" onMouseClicked="#updateInfo" style="-fx-background-color: #e73431;" text="Your appoiments" textFill="#dad6d6" />
                </children>
             </AnchorPane>
          </children></AnchorPane>

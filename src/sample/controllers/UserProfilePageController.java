@@ -156,6 +156,11 @@ public class UserProfilePageController implements Initializable {
         showStage("../scenes/servicesPage.fxml", "Our services");
     }
 
+    @FXML
+    public void showMyAppoiments() {
+        showStage("../scenes/MyAppoimentsPage.fxml", "My appoiments");
+    }
+
     private void showStage(String path, String title) {
         Parent root;
         try {

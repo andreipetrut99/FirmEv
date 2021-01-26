@@ -86,7 +86,7 @@ public class CurrentUser {
                 tasks += rs.getString(1) +  "\n";
             }
 
-            if (tasks.equals("")) {
+            if (tasks.isEmpty()) {
                 tasks = "not assigned yet";
             }
         } catch (SQLException throwables) {

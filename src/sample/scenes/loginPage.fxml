@@ -63,8 +63,7 @@
         </Label>
         <Label layoutX="191.0" layoutY="378.0" text="Schedule your appoiment now." textAlignment="CENTER" textFill="#acacac" />
         <Label layoutX="137.0" layoutY="396.0" text="Something wrong? Call us at (+40) 757 882 855" textAlignment="CENTER" textFill="#c9c8c8" />
-        <JFXButton fx:id="registerButton" layoutX="164.0" layoutY="351.0" onMouseClicked="#register" prefHeight="26.0" prefWidth="94.0" style="-fx-background-color: #e73431;" text="Register" textFill="#dad6d6" />
+        <JFXButton fx:id="registerButton" layoutX="226.0" layoutY="351.0" onMouseClicked="#register" prefHeight="26.0" prefWidth="94.0" style="-fx-background-color: #e73431;" text="Register" textFill="#dad6d6" />
         <Label layoutX="883.0" layoutY="5.0" onMouseClicked="#handleExit" text="X" />
-      <JFXButton fx:id="registerButton1" layoutX="284.0" layoutY="351.0" prefHeight="26.0" prefWidth="119.0" style="-fx-background-color: #e73431;" text="Employee login" textFill="#dad6d6" />
     </children>
 </AnchorPane>
