@@ -161,6 +161,21 @@ public class UserProfilePageController implements Initializable {
         showStage("../scenes/MyAppoimentsPage.fxml", "My appoiments");
     }
 
+    @FXML
+    public void showExpectedIncome() {
+        showStage("../scenes/expectedIncomePage.fxml", "Expected income");
+    }
+
+    @FXML
+    public void showEmpNoApp() {
+        showStage("../scenes/noAppoimentsPage.fxml", "Employees with no appoiments");
+    }
+
+    @FXML
+    public void showMoreTasks() {
+        showStage("../scenes/moreTasksPage.fxml", "Employees with more tasks than you");
+    }
+
     private void showStage(String path, String title) {
         Parent root;
         try {

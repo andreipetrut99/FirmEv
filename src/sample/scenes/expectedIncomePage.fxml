@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="181.0" prefWidth="282.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ExpectedIncomeController">
+   <children>
+      <Label layoutX="46.0" layoutY="37.0" text="We expect to collect the amount of:" />
+      <Label fx:id="amountLabel" layoutX="112.0" layoutY="73.0" text="xxxxx RON" />
+      <JFXButton fx:id="closeButton" layoutX="118.0" layoutY="122.0" onMouseClicked="#close" style="-fx-background-color: #e73431;" text="Close" textFill="#dad6d6" />
+   </children>
+</AnchorPane>

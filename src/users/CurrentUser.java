@@ -21,7 +21,7 @@ public class CurrentUser {
     private Date birthDate;
     private Date registrationDate;
 
-    private int employeeId;
+    private int employeeId = 7;
     private String iban;
     private String cnp;
     private String tasks = "";
@@ -76,8 +76,9 @@ public class CurrentUser {
                 agencyId = rs.getInt(10);
             }
 
-            query = "SELECT S.Nume_sarcina FROM sarcini S" +
+            query = "SELECT S.Nume_sarcina, D.Nume_departament FROM sarcini S" +
                     " INNER JOIN sarcina_angajat SA ON SA.ID_sarcina = S.ID_sarcina " +
+                    " INNER JOIN departamente D ON D.ID_departament = S.ID_departament " +
                     "WHERE SA.ID_Angajat = " + employeeId;
 
             rs = Database.getInstance().runSql(query);
@@ -125,6 +126,7 @@ public class CurrentUser {
         username = null;
         password = null;
         isEmployee = false;
+        tasks = "";
     }
 
     public String getUsername() {
