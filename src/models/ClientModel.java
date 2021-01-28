@@ -1,4 +1,4 @@
-package sample.controllers;
+package models;
 
 import database.Database;
 import javafx.beans.property.SimpleIntegerProperty;

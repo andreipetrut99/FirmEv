@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.MyJobsController">
+   <children>
+      <TableView fx:id="tbData" layoutX="6.0" layoutY="42.0" prefHeight="355.0" prefWidth="590.0">
+        <columns>
+          <TableColumn fx:id="firstName" prefWidth="92.800048828125" text="First Name" />
+          <TableColumn fx:id="lastName" prefWidth="82.39996337890625" text="Last Name" />
+            <TableColumn fx:id="phone" prefWidth="89.5999755859375" text="Phone" />
+            <TableColumn fx:id="address" prefWidth="176.800048828125" text="Address" />
+            <TableColumn fx:id="date" prefWidth="76.79998779296875" text="Date" />
+            <TableColumn fx:id="hour" prefWidth="71.2000732421875" text="Hour" />
+        </columns>
+      </TableView>
+      <ChoiceBox fx:id="filterDate" layoutX="79.0" layoutY="13.0" prefHeight="26.0" prefWidth="112.0" />
+      <Label layoutX="39.0" layoutY="18.0" text="Date" />
+      <JFXButton layoutX="215.0" layoutY="14.0" onAction="#refresh" text="refresh" />
+   </children>
+</AnchorPane>

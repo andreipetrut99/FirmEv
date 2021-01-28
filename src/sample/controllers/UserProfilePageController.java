@@ -176,6 +176,15 @@ public class UserProfilePageController implements Initializable {
         showStage("../scenes/moreTasksPage.fxml", "Employees with more tasks than you");
     }
 
+    @FXML
+    public void showMyJobs() {
+        showStage("../scenes/myJobPage.fxml", "My jobs");
+    }
+
+    @FXML
+    public void showBestEmployee() {
+        showStage("../scenes/bestEmployee.fxml", "Best employee");
+    }
     private void showStage(String path, String title) {
         Parent root;
         try {

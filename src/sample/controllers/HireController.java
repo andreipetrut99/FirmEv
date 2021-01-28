@@ -1,19 +1,13 @@
 package sample.controllers;
 
-import com.mysql.cj.xdevapi.Client;
 import database.Database;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import models.ClientModel;
 
-import javax.security.auth.callback.Callback;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
